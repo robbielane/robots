@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>All Robots</h2>
+</div>
+
+<div class="col-sm-12">
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Birthdate</th>
+        <th>Date Hired</th>
+        <th>Department</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @robots.each do |robot| %>
+      <tr>
+        <td><img class="img-circle thumbnail-small" src="<%= robot.avatar %>" alt="" /></td>
+        <td><a href="/robots/<%= robot.id %>"><%= robot.name %></a></td>
+        <td><%= robot.city.capitalize %>, <%= robot.state.upcase %></td>
+        <td><%= robot.birthdate %></td>
+        <td><%= robot.date_hired %></td>
+        <td><%= robot.department %></td>
+        <td><a href="/robots/<%= robot.id %>/edit" class="btn btn-xs btn-warning" role="button">Edit</a>
+        <td>
+          <form action="/robots/<%= robot.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" class="btn btn-xs btn-danger" value="delete"/>
+          </form>
+        </td>
+      </tr>
+    <% end %>
+  </div>
+</div>
+</div>

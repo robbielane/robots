@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="col-sm-8 col-sm-offset-2">
+    <form action="/robots/<%= @robot.id %>" method="POST">
+      <input type="hidden" name="_method" value="PUT">
+      <p class="text-center">Enter a new task:</p>
+      <div class="form-group">
+
+          <label for="robot-name">Name</label>
+          <input class="form-control" type='text' value="<%= @robot.name %>" name='robot[name]' id="robot-name"/><br>
+
+          <label for="robot-city">City</label>
+          <input class="form-control" type='text' id="robot-city" value="<%= @robot.city %>" name='robot[city]'><br>
+
+          <label for="robot-state">State</label>
+          <input class="form-control" type='text' id="robot-state" value="<%= @robot.state %>" name='robot[state]'><br>
+
+          <label for="robot-birthdate">Birthdate (MM/DD/YYYY)</label>
+          <input class="form-control" type='text' id="robot-birthdate" value="<%= @robot.birthdate %>" name='robot[birthdate]'><br>
+
+          <label for="robot-date-hired">Date Hired (MM/DD/YYYY)</label>
+          <input class="form-control" type='text' id="robot-date-hired" value="<%= @robot.date_hired %>" name='robot[date_hired]'><br>
+
+          <label for="robot-department">Department</label>
+          <input class="form-control" itype='text' d="robot-department" value="<%= @robot.department %>" name='robot[department]'><br>
+
+          <input class="btn btn-defualt pull-right" type='submit'/>
+      </div>
+    </form>
+
+  </div>
+</div>

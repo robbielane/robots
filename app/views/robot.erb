@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-2">
+      <img src="<%= @robot.avatar %>" class="img-responsive img-circle" />
+    </div>
+    <div class="col-sm-4">
+      <h4><strong>Name: </strong> <%= @robot.name %></h4>
+      <h5><strong>Location: </strong> <%= @robot.city.capitalize %>, <%= @robot.state.upcase %></h5>
+      <h5><strong>Department: </strong> <%= @robot.department %></h5>
+      <h5><strong>Date of Birth: </strong> <%= @robot.birthdate %></h5>
+      <h5><strong>Start Date: </strong> <%= @robot.date_hired %></h5>
+      <h5><strong>Age: </strong> <%= @robot.age %></h5>
+      <a href="/robots/<%= @robot.id %>/edit" class="btn btn-warning">Edit</a>
+      <br><br>
+      <form action="/robots/<%= @robot.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="inline btn btn-danger" value="delete"/>
+      </form>
+    </div>
+
+  </div>
+</div>
