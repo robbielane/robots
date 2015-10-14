@@ -6,7 +6,7 @@ robots:
   state: CO
   avatar: https://robohash.org/robbie.png
   birthdate: 07/24/1987
-  date_hired: 10/14/2015
+  date_hired: 10/14/2012
   department: Information Technology
 - id: 2
   name: Peter
@@ -32,4 +32,44 @@ robots:
   birthdate: 12/25/1948
   date_hired: 10/14/2015
   department: Robot Repair
-total: 9
+- id: 14
+  name: Jim
+  city: Aspen
+  state: Co
+  avatar: https://robohash.org/Jim.png
+  birthdate: 06/14/1978
+  date_hired: 07/01/2012
+  department: Accounting
+- id: 15
+  name: Kyle
+  city: Aspen
+  state: co
+  avatar: https://robohash.org/Kyle.png
+  birthdate: 09/11/2014
+  date_hired: 10/15/2015
+  department: Software Development
+- id: 16
+  name: Bill
+  city: Madison
+  state: WI
+  avatar: https://robohash.org/Bill.png
+  birthdate: 04/04/2004
+  date_hired: 10/14/2014
+  department: Software Development
+- id: 17
+  name: Steve
+  city: Denver
+  state: Co
+  avatar: https://robohash.org/Steve.png
+  birthdate: 05/01/2000
+  date_hired: 10/14/1999
+  department: Management
+- id: 18
+  name: Kelsey
+  city: New York
+  state: ny
+  avatar: https://robohash.org/Kelsey.png
+  birthdate: 02/14/1985
+  date_hired: 07/01/2001
+  department: Management
+total: 18

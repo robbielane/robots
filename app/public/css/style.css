@@ -2,3 +2,24 @@
   width: 35px;
   height: 35px;
 }
+
+.red {
+  color: #A62D10;
+}
+
+.navbar-brand {
+  color: #115A41 !important;
+}
+
+.nav li a {
+  color: #115A41 !important;
+}
+
+
+.top {
+  height: 67px;
+}
+
+.top .btn {
+  margin-top: 20px;
+}

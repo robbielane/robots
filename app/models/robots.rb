@@ -65,6 +65,50 @@ class Robots
   end
 
   def self.hired_robots_by_year
-    years = all.map { |robot| robot.date_hired.split('/')[2] }.uniq
+    by_year = {}
+    years = all.map { |robot| robot.date_hired.split('/')[2] }.uniq.sort
+    years.each do |year|
+      by_year[year] = 0
+      all.each do |robot|
+        by_year[year] += 1 if robot.date_hired.split('/')[2] == year
+      end
+    end
+    by_year
+  end
+
+  def self.robots_by_department
+    by_department = {}
+    departments = all.map { |robot| robot.department }.uniq
+    departments.each do |department|
+      by_department[department.upcase] = 0
+      all.each do |robot|
+        by_department[department.upcase] += 1 if robot.department == department
+      end
+    end
+    by_department
+  end
+
+  def self.robots_by_city
+    by_city = {}
+    cities = all.map { |robot| robot.city }.uniq
+    cities.each do |city|
+      by_city[city.upcase] = 0
+      all.each do |robot|
+        by_city[city.upcase] += 1 if robot.city.upcase == city.upcase
+      end
+    end
+    by_city
+  end
+
+  def self.robots_by_state
+    by_state = {}
+    states = all.map { |robot| robot.state }.uniq
+    states.each do |state|
+      by_state[state.upcase] = 0
+      all.each do |robot|
+        by_state[state.upcase] += 1 if robot.state.upcase == state.upcase
+      end
+    end
+    by_state
   end
 end
