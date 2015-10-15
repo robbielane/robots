@@ -8,7 +8,7 @@ class EditingRobotTest < FeatureTest
     within('table') do
       assert has_content?('robbie0')
     end
-    click_button('delete')
+    click_button('Delete')
 
     assert_equal '/robots', current_path
     within('table') do

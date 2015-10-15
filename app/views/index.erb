@@ -23,8 +23,8 @@
         <th></th>
         <th></th>
       </tr>
-      <% @robots.each do |robot| %>
-      <tr>
+      <% @robots.each_with_index do |robot, i| %>
+      <tr id="<%= i %>">
         <td><img class="img-circle thumbnail-small" src="<%= robot.avatar %>" alt="" /></td>
         <td><a href="/robots/<%= robot.id %>"><%= robot.name %></a></td>
         <td><%= robot.city.capitalize %>, <%= robot.state.upcase %></td>
@@ -35,7 +35,7 @@
         <td>
           <form action="/robots/<%= robot.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" class="btn btn-xs btn-danger" value="delete"/>
+            <input type="submit" class="btn btn-xs btn-danger" value="Delete"/>
           </form>
         </td>
       </tr>

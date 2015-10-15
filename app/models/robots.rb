@@ -81,7 +81,7 @@ class Robots
 
   def self.robots_by_department
     by_department = {}
-    departments = all.map { |robot| robot.department }.uniq
+    departments = all.map { |robot| robot.department }.uniq.sort
     departments.each do |department|
       by_department[department.upcase] = 0
       all.each do |robot|
@@ -93,7 +93,7 @@ class Robots
 
   def self.robots_by_city
     by_city = {}
-    cities = all.map { |robot| robot.city }.uniq
+    cities = all.map { |robot| robot.city }.uniq.sort
     cities.each do |city|
       by_city[city.upcase] = 0
       all.each do |robot|
@@ -105,7 +105,7 @@ class Robots
 
   def self.robots_by_state
     by_state = {}
-    states = all.map { |robot| robot.state }.uniq
+    states = all.map { |robot| robot.state }.uniq.sort
     states.each do |state|
       by_state[state.upcase] = 0
       all.each do |robot|
@@ -116,9 +116,9 @@ class Robots
   end
 
   def self.delete_all
-   database.transaction do
-     database['robots'] = []
-     database['total'] = 0
+    database.transaction do
+      database['robots'] = []
+      database['total'] = 0
+    end
   end
- end
 end
