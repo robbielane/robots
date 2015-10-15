@@ -1,15 +1,10 @@
-require 'models/robots'
-
 class RobotsApp < Sinatra::Base
-  set :root, File.expand_path("..", __dir__)
-  set :method_override, true
-
   get '/' do
     @average_age          = Robots.average_age
     @hiring_by_year       = Robots.hired_robots_by_year
     @robots_by_department = Robots.robots_by_department
     @robots_by_city       = Robots.robots_by_city
-    @robots_by_state       = Robots.robots_by_state
+    @robots_by_state      = Robots.robots_by_state
 
     erb :dashboard
   end

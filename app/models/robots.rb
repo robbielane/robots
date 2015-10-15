@@ -1,9 +1,12 @@
 require 'yaml/store'
-require_relative 'robot'
 
 class Robots
   def self.database
-    @database ||= YAML::Store.new("db/robots")
+    if ENV['RACK_ENV'] == 'test'
+      @database ||= YAML::Store.new("db/robots_test")
+    else
+      @database ||= YAML::Store.new("db/robots")
+    end
   end
 
   def self.create(data)
@@ -111,4 +114,11 @@ class Robots
     end
     by_state
   end
+
+  def self.delete_all
+   database.transaction do
+     database['robots'] = []
+     database['total'] = 0
+  end
+ end
 end
