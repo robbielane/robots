@@ -4,9 +4,15 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'minitest/autorun'
 require 'tilt/erb'
 
+DatabaseCleaner[:sequel, { :connection => Sequel.sqlite("db/robots_test.sqlite3") }].strategy = :truncation
+
 class Minitest::Test
+  def setup
+    DatabaseCleaner.start
+  end
+
   def teardown
-    Robots.delete_all
+    DatabaseCleaner.clean
   end
 
   def generate_robots(num)

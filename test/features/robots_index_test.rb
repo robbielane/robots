@@ -57,7 +57,7 @@ class RobotsIndexTest < FeatureTest
       click_link('Edit')
     end
 
-    assert_equal '/robots/2/edit', current_path
+    assert_equal "/robots/#{Robots.all[1].id}/edit", current_path
   end
 
   def test_delete_button_removes_correct_robot

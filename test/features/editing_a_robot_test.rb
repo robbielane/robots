@@ -4,9 +4,9 @@ class EditRobotTest < FeatureTest
   def test_user_can_edit_an_existing_robot
     generate_robots(1)
 
-    visit '/robots/1/edit'
+    visit "/robots/#{Robots.all.last.id}/edit"
 
-    assert_equal '/robots/1/edit', current_path
+    assert_equal "/robots/#{Robots.all.last.id}/edit", current_path
 
     fill_in('robot[name]', :with => "George")
     fill_in('robot[city]', :with => "Madison")
@@ -16,7 +16,7 @@ class EditRobotTest < FeatureTest
     fill_in('robot[department]', :with => "Finance")
     click_button('Submit')
 
-    assert_equal '/robots/1', current_path
+    assert_equal "/robots/#{Robots.all.last.id}", current_path
 
     within('#robot-info') do
       assert page.has_content?('George')

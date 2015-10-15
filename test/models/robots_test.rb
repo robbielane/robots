@@ -3,8 +3,9 @@ require_relative '../test_helper'
 class RobotsTest < Minitest::Test
   def test_it_can_create_a_robot
     generate_robots(1)
-    robot = Robots.find(1)
+    robot = Robots.find(Robots.all.first.id)
 
+    assert_equal Robots.all.first.id, robot.id
     assert_equal "robbie0", robot.name
     assert_equal "https://robohash.org/robbie0.png", robot.avatar
   end
@@ -20,20 +21,20 @@ class RobotsTest < Minitest::Test
   def test_find_returns_correct_robot
     generate_robots(3)
 
-    assert_equal "robbie1", Robots.find(2).name
-    assert_equal "https://robohash.org/robbie1.png", Robots.find(2).avatar
+    assert_equal "robbie1", Robots.find(Robots.all[1].id).name
+    assert_equal "https://robohash.org/robbie1.png", Robots.find(Robots.all[1].id).avatar
   end
 
   def test_update_modifies_existing_robot
     generate_robots(2)
-    Robots.edit(2, {:name => "peter",
+    Robots.edit(Robots.all.last.id, {:name => "peter",
                     :city => "Juneau",
                     :state => "AK",
                     :birthdate => "07/24/1987",
                     :date_hired => "10/15/2015",
                     :department => "IT"
                     })
-    robot = Robots.find(2)
+    robot = Robots.find(Robots.all.last.id)
 
     assert_equal "peter", robot.name
     assert_equal "Juneau", robot.city
@@ -45,8 +46,8 @@ class RobotsTest < Minitest::Test
 
     assert_equal ["robbie0", "robbie1"], Robots.all.map { |robot| robot.name }
 
-    Robots.delete(1)
-    Robots.delete(2)
+    Robots.delete(Robots.all.last.id)
+    Robots.delete(Robots.all.last.id)
 
     assert_equal [], Robots.all
   end
