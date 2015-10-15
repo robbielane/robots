@@ -15,10 +15,10 @@
           <input class="form-control" type='text' id="robot-state" value="<%= @robot.state %>" name='robot[state]'><br>
 
           <label for="robot-birthdate">Birthdate (MM/DD/YYYY)</label>
-          <input class="form-control" type='text' id="robot-birthdate" value="<%= @robot.birthdate %>" name='robot[birthdate]'><br>
+          <input class="form-control" type='text' pattern="\d{1,2}/\d{1,2}/\d{4}" id="robot-birthdate" value="<%= @robot.birthdate %>" name='robot[birthdate]'><br>
 
           <label for="robot-date-hired">Date Hired (MM/DD/YYYY)</label>
-          <input class="form-control" type='text' id="robot-date-hired" value="<%= @robot.date_hired %>" name='robot[date_hired]'><br>
+          <input class="form-control" type='text' pattern="\d{1,2}/\d{1,2}/\d{4}" id="robot-date-hired" value="<%= @robot.date_hired %>" name='robot[date_hired]'><br>
 
           <label for="robot-department">Department</label>
           <input class="form-control" itype='text' d="robot-department" value="<%= @robot.department %>" name='robot[department]'><br>
