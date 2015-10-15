@@ -1,19 +1,6 @@
 require_relative '../test_helper'
 
 class RobotsTest < Minitest::Test
-  def generate_robots(num)
-    num.times do |i|
-      Robots.create({:name => "robbie#{i}",
-                     :city => "Denver",
-                     :state => "CO",
-                     :avatar => "https://robohash.org/robbie#{i}.png",
-                     :birthdate => "07/24/1987",
-                     :date_hired => "10/15/2015",
-                     :department => "IT",
-                     })
-    end
-  end
-
   def test_it_can_create_a_robot
     generate_robots(1)
     robot = Robots.find(1)

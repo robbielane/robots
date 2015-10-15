@@ -3,7 +3,7 @@
     <div class="col-sm-4 col-sm-offset-2">
       <img src="<%= @robot.avatar %>" class="img-responsive img-circle" />
     </div>
-    <div class="col-sm-4">
+    <div id="robot-info" class="col-sm-4">
       <h4><strong>Name: </strong> <%= @robot.name %></h4>
       <h5><strong>Location: </strong> <%= @robot.city.capitalize %>, <%= @robot.state.upcase %></h5>
       <h5><strong>Department: </strong> <%= @robot.department %></h5>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/flaticon.css"> 
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Robots</title>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-6 top">
+      <h2>All Robots</h2>
+    </div>
+
+    <div class="col-sm-6 top">
+      <a class="btn btn-default pull-right" href="/robots/new"><span class="glyphicon glyphicon-plus"></span> Add New Robot</a>
+      <a class="btn btn-default pull-right" href="/"><span class="glyphicon glyphicon-arrow-left"></span> Dashboard</a>
+    </div>
+  </div>
+
+  <div class="col-sm-12 table-responsive">
+    <table class="table table-striped">
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Birthdate</th>
+        <th>Date Hired</th>
+        <th>Department</th>
+        <th></th>
+        <th></th>
+      </tr>
+      
+      <tr>
+        <td><img class="img-circle thumbnail-small" src="https://robohash.org/robbie0.png" alt="" /></td>
+        <td><a href="/robots/1">robbie0</a></td>
+        <td>Denver, CO</td>
+        <td>07/24/1987</td>
+        <td>10/15/2015</td>
+        <td>IT</td>
+        <td><a href="/robots/1/edit" class="btn btn-xs btn-warning" role="button">Edit</a>
+        <td>
+          <form action="/robots/1" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" class="btn btn-xs btn-danger" value="delete"/>
+          </form>
+        </td>
+      </tr>
+    
+  </div>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
